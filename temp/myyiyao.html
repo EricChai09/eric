@@ -1,0 +1,265 @@
+﻿<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="plugins/layui/css/layui.css" media="all" />
+		<link rel="stylesheet" href="css/main.css" />
+        <style>
+            .layui-btn-big{
+                height: 44px;
+                line-height: 44px;
+                padding: 0 25px;
+                font-size: 16px;
+                margin-right: 31px;
+                margin-bottom: 31px;
+                margin-top: 30px;
+            }
+            .layui-btn+.layui-btn{
+                margin-left: 0px;
+            }
+            .layui-elem-quote{
+                border-left: 5px solid #ab5f48;
+            }
+            .layui-btn{
+                background-color: #ab5f48;
+            }
+            .layui-btn-radius{
+                background-color: white;
+            }
+            .layui-btn-primary:hover{
+                border-color: #ab5f48;
+            }
+        </style>
+	</head>
+
+	<body>
+		<div class="admin-main">
+            <blockquote class="layui-elem-quote">
+                <button type="button" class="layui-btn layui-btn-small" id="getAll"><i class="fa fa-plus" aria-hidden="true"></i>直接查找</button>
+                <form class="layui-form" style="float:right;">
+                    <div class="layui-form-item" style="margin:0;">
+                        <label class="layui-form-label">名称/编号</label>
+                        <div class="layui-input-inline">
+                            <input type="text" name="name" placeholder="支持模糊查询.." autocomplete="off" class="layui-input">
+                        </div>
+                        <div class="layui-form-mid layui-word-aux" style="padding:0;">
+                            <button lay-filter="search" class="layui-btn" lay-submit><i class="fa fa-search" aria-hidden="true"></i> 查询</button>
+                        </div>
+                    </div>
+                </form>
+            </blockquote>
+			<fieldset class="layui-elem-field">
+				<legend>列表</legend>
+				<div class="layui-collapse" >
+                    <div class="layui-colla-item">
+                        <h2 class="layui-colla-title">最新产品</h2>
+                        <div class="layui-colla-content">
+                            <p>最新产品推动技术发展</p>
+                        </div>
+                    </div>
+					<div class="layui-colla-item">
+						<h2 class="layui-colla-title">使用产品</h2>
+						<div class="layui-colla-content layui-show">
+							<div class="layui-collapse" lay-accordion="">
+								<div class="layui-colla-item">
+									<h2 class="layui-colla-title">护理</h2>
+									<div class="layui-colla-content layui-show">
+										<div class="layui-collapse" lay-accordion="">
+											<div class="layui-colla-item">
+												<h2 class="layui-colla-title">洁牙</h2>
+												<div class="layui-colla-content layui-show" style="height: 530px">
+                                                    <fieldset class="layui-elem-field" style="width: 430px">
+                                                        <legend>理疗表</legend>
+                                                        <div class="layui-field-box">
+                                                            <table class="layui-table">
+                                                                <thead>
+                                                                <tr>
+                                                                    <th style="text-align: center;">产品编号</th>
+                                                                    <th style="text-align: center;">负责人</th>
+                                                                </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                <tr>
+                                                                    <td style="text-align: center;">0001000</td>
+                                                                    <td style="text-align: center;">张伟</td>
+                                                                </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                    </fieldset>
+                                                    <fieldset class="layui-elem-field" style="top: -154px; float:right;position: relative">
+                                                        <legend>理疗需要物品</legend>
+                                                        <div class="layui-field-box">
+                                                            <table class="layui-table">
+                                                                <thead>
+                                                                <tr>
+                                                                    <th>物品编号</th>
+                                                                    <th>物品名称</th>
+                                                                    <th>物品数量</th>
+                                                                    <th>物品单位</th>
+                                                                    <th>物品单价</th>
+                                                                    <th>物品总价</th>
+                                                                </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                <tr>
+                                                                    <td style="text-align: center;">000100001</td>
+                                                                    <td style="text-align: center;">xx消毒水</td>
+                                                                    <td style="text-align: center;">300</td>
+                                                                    <td style="text-align: center;">cc</td>
+                                                                    <td style="text-align: center;">0.05</td>
+                                                                    <td style="text-align: center;">15</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align: center;">000100002</td>
+                                                                    <td style="text-align: center;">xx消毒水</td>
+                                                                    <td style="text-align: center;">300</td>
+                                                                    <td style="text-align: center;">cc</td>
+                                                                    <td style="text-align: center;">0.05</td>
+                                                                    <td style="text-align: center;">15</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align: center;">000100003</td>
+                                                                    <td style="text-align: center;">xx消毒水</td>
+                                                                    <td style="text-align: center;">300</td>
+                                                                    <td style="text-align: center;">cc</td>
+                                                                    <td style="text-align: center;">0.05</td>
+                                                                    <td style="text-align: center;">15</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align: center;">000100004</td>
+                                                                    <td style="text-align: center;">xx消毒水</td>
+                                                                    <td style="text-align: center;">300</td>
+                                                                    <td style="text-align: center;">cc</td>
+                                                                    <td style="text-align: center;">0.05</td>
+                                                                    <td style="text-align: center;">15</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align: center;">000100005</td>
+                                                                    <td style="text-align: center;">xx消毒水</td>
+                                                                    <td style="text-align: center;">300</td>
+                                                                    <td style="text-align: center;">cc</td>
+                                                                    <td style="text-align: center;">0.05</td>
+                                                                    <td style="text-align: center;">15</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align: center;">000100006</td>
+                                                                    <td style="text-align: center;">xx消毒水</td>
+                                                                    <td style="text-align: center;">300</td>
+                                                                    <td style="text-align: center;">cc</td>
+                                                                    <td style="text-align: center;">0.05</td>
+                                                                    <td style="text-align: center;">15</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align: center;">000100007</td>
+                                                                    <td style="text-align: center;">xx消毒水</td>
+                                                                    <td style="text-align: center;">300</td>
+                                                                    <td style="text-align: center;">cc</td>
+                                                                    <td style="text-align: center;">0.05</td>
+                                                                    <td style="text-align: center;">15</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align: center;">000100008</td>
+                                                                    <td style="text-align: center;">xx消毒水</td>
+                                                                    <td style="text-align: center;">300</td>
+                                                                    <td style="text-align: center;">cc</td>
+                                                                    <td style="text-align: center;">0.05</td>
+                                                                    <td style="text-align: center;">15</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align: center;">000100009</td>
+                                                                    <td style="text-align: center;">xx消毒水</td>
+                                                                    <td style="text-align: center;">300</td>
+                                                                    <td style="text-align: center;">cc</td>
+                                                                    <td style="text-align: center;">0.05</td>
+                                                                    <td style="text-align: center;">15</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align: center;">总计</td>
+                                                                    <td style="text-align: center;" colspan="5">135</td>
+
+                                                                </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                    </fieldset>
+                                                    <fieldset class="layui-elem-field site-demo-button" style="width: 430px">
+                                                        <legend>理疗过程</legend>
+                                                        <div style="position: relative;left: 10px">
+                                                            <button onclick="getSho()" class="layui-btn layui-btn-big layui-btn-primary layui-btn-radius">1、消毒</button>
+                                                            <button class="layui-btn layui-btn-big layui-btn-primary layui-btn-radius">2、消毒</button>
+                                                            <button class="layui-btn layui-btn-big layui-btn-primary layui-btn-radius">3、消毒</button>
+                                                            <button class="layui-btn layui-btn-big layui-btn-primary layui-btn-radius">6、消毒</button>
+                                                            <button class="layui-btn layui-btn-big layui-btn-primary layui-btn-radius">5、消毒</button>
+                                                            <button class="layui-btn layui-btn-big layui-btn-primary layui-btn-radius">4、消毒</button>
+                                                            <button class="layui-btn layui-btn-big layui-btn-primary layui-btn-radius">7、消毒</button>
+                                                            <button class="layui-btn layui-btn-big layui-btn-primary layui-btn-radius">8、消毒</button>
+                                                            <button class="layui-btn layui-btn-big layui-btn-primary layui-btn-radius">9、消毒</button>
+                                                        </div>
+                                                            </fieldset>
+                                                        </div>
+
+                                                </div>
+											</div>
+											<div class="layui-colla-item">
+												<h2 class="layui-colla-title">矫正</h2>
+												<div class="layui-colla-content">
+													<p>变好看</p>
+												</div>
+											</div>
+											<div class="layui-colla-item">
+												<h2 class="layui-colla-title">美白</h2>
+												<div class="layui-colla-content">
+													<p>变白</p>
+												</div>
+											</div>
+										</div>
+
+									</div>
+								</div>
+								<div class="layui-colla-item">
+									<h2 class="layui-colla-title">治疗</h2>
+									<div class="layui-colla-content">
+										<p>保守治疗</p>
+									</div>
+								</div>
+								<div class="layui-colla-item">
+									<h2 class="layui-colla-title">手术</h2>
+									<div class="layui-colla-content">
+										<p>需要手术</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+
+				</div>
+			</fieldset>
+
+		</div>
+	</body>
+	<script src="plugins/layui/layui.js" charset="utf-8"></script>
+	<!-- 注意：如果你直接复制所有代码到本地，上述js路径需要改成你本地的 -->
+	<script>
+        layui.use(['element', 'layer'], function(){
+            var element = layui.element;
+            var layer = layui.layer;
+
+            //监听折叠
+
+        });
+        function getSho() {
+            layer.open({
+                type:2,
+                title:"理疗步骤用品详细信息",
+                shadeClose:true,
+                skin:'layui-layer-rim',
+                area:['1000px','500px'],
+                content:'mygood.html'
+            })
+        }
+	</script>
+</html>
